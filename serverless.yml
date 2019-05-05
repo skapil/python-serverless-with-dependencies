@@ -1,0 +1,19 @@
+service: aws-python3
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: skapil
+  region: us-west-2
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+functions:
+  hello:
+    handler: handler.hello
+
+plugins:
+  - serverless-python-requirements
+
